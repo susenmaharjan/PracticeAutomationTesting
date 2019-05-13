@@ -41,13 +41,24 @@ public class HomepageWithThreeArrivalsNavigation {
     }
 
     public boolean CheckDescription() {
-        WebElement description = _webDriver.findElement(By.xpath("//a[@href='#tab-description']"));
-        description.click();
+        _webDriver.findElement(By.className("description_tab")).click();
 
-        WebElement descriptionArticle = Common.FindElementSafe(_webDriver, By.id("tab-description"));
+        WebElement description = Common.FindElementSafe(_webDriver, By.id("tab-description"));
 
-        if (descriptionArticle != null) {
-            System.out.println(descriptionArticle.getText());
+        if (description != null) {
+            System.out.println(description.getText());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean CheckReviews() {
+        _webDriver.findElement(By.className("reviews_tab")).click();
+
+        WebElement reviews = Common.FindElementSafe(_webDriver,By.id("reviews"));
+
+        if(reviews!=null){
+            System.out.println(reviews.getText());
             return true;
         }
         return false;

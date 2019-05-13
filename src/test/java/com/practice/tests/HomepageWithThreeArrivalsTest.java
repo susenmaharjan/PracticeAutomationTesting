@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import static org.junit.Assert.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class HomepageWithThreeArivalsTest {
+public class HomepageWithThreeArrivalsTest {
     private static WebDriver _webDriver;
     private static HomepageWithThreeArrivalsNavigation _homePage;
     private static CommonHomepage _common;
@@ -67,4 +67,9 @@ public class HomepageWithThreeArivalsTest {
         assertEquals(true, success);
     }
 
+    @Test
+    @Order(6)
+    public void CheckReviews() {
+        _homePage.CheckReviews();
+    }
 }
