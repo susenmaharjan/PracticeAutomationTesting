@@ -1,6 +1,7 @@
 package com.practice.bal.homepage;
 
 import com.practice.common.Common;
+import com.practice.environment.RunEnvironment;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -80,6 +81,16 @@ public class HomepageWithThreeArrivalsNavigation {
         WebElement inputText = _webDriver.findElement(By.className("input-text"));
         inputText.clear();
         inputText.sendKeys("700");
-        _webDriver.findElement(By.className("single_add_to_cart_button ")).click();
+        WebElement addToCartBtn = _webDriver.findElement(By.className("single_add_to_cart_button "));
+        addToCartBtn.click();
+
+        RunEnvironment.WaitDriver(3000);
+        inputText.clear();
+        inputText.sendKeys("2");
+        addToCartBtn.click();
+    }
+
+    public void ViewBasket() {
+        _webDriver.findElement(By.className("wc-forward")).click();
     }
 }

@@ -85,6 +85,11 @@ public class HomepageWithThreeArrivalsTest {
     @Order(8)
     public void AddMoreToBasket(){
         _homePage.AddMoreToBasket();
+    }
 
+    @Test
+    @Order(9)
+    public void ViewBasket(){
+        _homePage.ViewBasket();
     }
 }
