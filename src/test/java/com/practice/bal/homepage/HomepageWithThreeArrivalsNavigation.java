@@ -57,9 +57,9 @@ public class HomepageWithThreeArrivalsNavigation {
     public boolean CheckReviews() {
         _webDriver.findElement(By.className("reviews_tab")).click();
 
-        WebElement reviews = Common.FindElementSafe(_webDriver,By.id("reviews"));
+        WebElement reviews = Common.FindElementSafe(_webDriver, By.id("reviews"));
 
-        if(reviews!=null){
+        if (reviews != null) {
             System.out.println(reviews.getText());
             return true;
         }
@@ -68,9 +68,9 @@ public class HomepageWithThreeArrivalsNavigation {
 
     public boolean AddToBasket() {
         _webDriver.findElement(By.className("single_add_to_cart_button ")).click();
-        WebElement price = Common.FindElementSafe(_webDriver,By.className("woocommerce-Price-amount"));
+        WebElement price = Common.FindElementSafe(_webDriver, By.className("woocommerce-Price-amount"));
 
-        if(price!=null){
+        if (price != null) {
             System.out.println(price.getText());
             return true;
         }
@@ -92,5 +92,11 @@ public class HomepageWithThreeArrivalsNavigation {
 
     public void ViewBasket() {
         _webDriver.findElement(By.className("wc-forward")).click();
+    }
+
+    public void ApplyCoupon(String couponCode) {
+        WebElement couponCodeText = _webDriver.findElement(By.id("coupon_code"));
+        couponCodeText.sendKeys(couponCode);
+        _webDriver.findElement(By.name("apply_coupon")).click();
     }
 }

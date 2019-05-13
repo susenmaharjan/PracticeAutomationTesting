@@ -92,4 +92,10 @@ public class HomepageWithThreeArrivalsTest {
     public void ViewBasket(){
         _homePage.ViewBasket();
     }
+
+    @Test
+    @Order(10)
+    public void ApplyCoupon(){
+        _homePage.ApplyCoupon("krishnasakinala");
+    }
 }
