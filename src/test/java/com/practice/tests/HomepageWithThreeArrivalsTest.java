@@ -80,4 +80,11 @@ public class HomepageWithThreeArrivalsTest {
         boolean isSuccessful= _homePage.AddToBasket();
         assertEquals(true,isSuccessful);
     }
+
+    @Test
+    @Order(8)
+    public void AddMoreToBasket(){
+        _homePage.AddMoreToBasket();
+
+    }
 }

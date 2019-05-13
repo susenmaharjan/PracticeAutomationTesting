@@ -75,4 +75,11 @@ public class HomepageWithThreeArrivalsNavigation {
         }
         return false;
     }
+
+    public void AddMoreToBasket() {
+        WebElement inputText = _webDriver.findElement(By.className("input-text"));
+        inputText.clear();
+        inputText.sendKeys("700");
+        _webDriver.findElement(By.className("single_add_to_cart_button ")).click();
+    }
 }
