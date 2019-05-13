@@ -1,6 +1,6 @@
 package com.practice.tests;
 
-import com.practice.bal.homepage.HomepageWithThreeArrivals;
+import com.practice.bal.homepage.HomepageWithThreeArrivalsNavigation;
 import com.practice.common.CommonHomepage;
 import com.practice.environment.EnvironmentManager;
 import com.practice.environment.RunEnvironment;
@@ -12,14 +12,14 @@ import static org.junit.Assert.assertEquals;
 
 public class HomepageWithThreeArivalsTest {
     private static WebDriver _webDriver;
-    private static HomepageWithThreeArrivals _homePage;
+    private static HomepageWithThreeArrivalsNavigation _homePage;
     private static CommonHomepage _common;
 
     @BeforeAll
     public static void SetUp() {
         EnvironmentManager.InitWebDriver("http://practice.automationtesting.in/");
         _webDriver = RunEnvironment.GetWebDriver();
-        _homePage = PageFactory.initElements(_webDriver, HomepageWithThreeArrivals.class);
+        _homePage = PageFactory.initElements(_webDriver, HomepageWithThreeArrivalsNavigation.class);
         _common = PageFactory.initElements(_webDriver, CommonHomepage.class);
     }
 

@@ -9,10 +9,10 @@ import org.openqa.selenium.support.FindBys;
 
 import java.util.List;
 
-public class HomepageWithThreeArrivals {
+public class HomepageWithThreeArrivalsNavigation {
     private WebDriver _webDriver;
 
-    public HomepageWithThreeArrivals(WebDriver webDriver) {
+    public HomepageWithThreeArrivalsNavigation(WebDriver webDriver) {
         _webDriver = webDriver;
     }
 
