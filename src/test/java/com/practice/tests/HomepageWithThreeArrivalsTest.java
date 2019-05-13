@@ -56,8 +56,8 @@ public class HomepageWithThreeArrivalsTest {
     @Test
     @Order(4)
     public void ClickImageAndAddToBasket() {
-        boolean isSuccessfull = _homePage.ClickImageAndAddToBasket();
-        assertEquals(true, isSuccessfull);
+        boolean isSuccessful = _homePage.ClickImageAndAddToBasket();
+        assertEquals(true, isSuccessful);
     }
 
     @Test
@@ -70,6 +70,14 @@ public class HomepageWithThreeArrivalsTest {
     @Test
     @Order(6)
     public void CheckReviews() {
-        _homePage.CheckReviews();
+        boolean isSuccessful = _homePage.CheckReviews();
+        assertEquals(true, isSuccessful);
+    }
+
+    @Test
+    @Order(7)
+    public void AddToBasket() {
+        boolean isSuccessful= _homePage.AddToBasket();
+        assertEquals(true,isSuccessful);
     }
 }

@@ -2,6 +2,7 @@ package com.practice.bal.homepage;
 
 import com.practice.common.Common;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -59,6 +60,17 @@ public class HomepageWithThreeArrivalsNavigation {
 
         if(reviews!=null){
             System.out.println(reviews.getText());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean AddToBasket() {
+        _webDriver.findElement(By.className("single_add_to_cart_button ")).click();
+        WebElement price = Common.FindElementSafe(_webDriver,By.className("woocommerce-Price-amount"));
+
+        if(price!=null){
+            System.out.println(price.getText());
             return true;
         }
         return false;
