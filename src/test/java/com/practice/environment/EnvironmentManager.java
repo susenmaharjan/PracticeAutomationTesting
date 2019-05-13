@@ -10,6 +10,8 @@ public class EnvironmentManager {
         WebDriver _webDriver = new ChromeDriver();
         _webDriver.manage().window().maximize();
         _webDriver.get(url);
+
+
         RunEnvironment.SetWebDriver(_webDriver);
     }
 
