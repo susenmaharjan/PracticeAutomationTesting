@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.Assert.assertEquals;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class HomepageWithThreeArivalsTest {
     private static WebDriver _webDriver;
     private static HomepageWithThreeArrivalsNavigation _homePage;
@@ -57,6 +58,13 @@ public class HomepageWithThreeArivalsTest {
     public void ClickImageAndAddToBasket() {
         boolean isSuccessfull = _homePage.ClickImageAndAddToBasket();
         assertEquals(true, isSuccessfull);
+    }
+
+    @Test
+    @Order(5)
+    public void CheckDescription() {
+        boolean success = _homePage.CheckDescription();
+        assertEquals(true, success);
     }
 
 }

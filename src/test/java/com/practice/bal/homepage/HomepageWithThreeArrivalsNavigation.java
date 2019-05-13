@@ -39,4 +39,17 @@ public class HomepageWithThreeArrivalsNavigation {
         }
         return false;
     }
+
+    public boolean CheckDescription() {
+        WebElement description = _webDriver.findElement(By.xpath("//a[@href='#tab-description']"));
+        description.click();
+
+        WebElement descriptionArticle = Common.FindElementSafe(_webDriver, By.id("tab-description"));
+
+        if (descriptionArticle != null) {
+            System.out.println(descriptionArticle.getText());
+            return true;
+        }
+        return false;
+    }
 }
