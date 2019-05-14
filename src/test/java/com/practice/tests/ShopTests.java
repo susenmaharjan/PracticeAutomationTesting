@@ -37,15 +37,28 @@ public class ShopTests {
 
     @Test
     @Order(2)
-    public void SelectProduct(){
+    public void SelectProduct() {
         _shop.SelectProduct();
-        RunEnvironment.WaitDriver(5000);
-        _webDriver.navigate().back();
+        RunEnvironment.WaitAndNavigateBack();
     }
 
     @Test
     @Order(3)
-    public void SortingProducts(){
+    public void SortingProducts() {
         _shop.SortProduct();
+    }
+
+    @Test
+    @Order(4)
+    public void ReadMore() {
+        _shop.ReadMore();
+        RunEnvironment.WaitAndNavigateBack();
+    }
+
+    @Test
+    @Order(5)
+    public void SelectOnSale(){
+        _shop.SelectOnSale();
+        RunEnvironment.WaitAndNavigateBack();
     }
 }

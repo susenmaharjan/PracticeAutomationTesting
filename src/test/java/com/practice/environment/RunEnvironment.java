@@ -35,4 +35,9 @@ public class RunEnvironment {
             System.out.println(ex.getMessage());
         }
     }
+
+    public static void WaitAndNavigateBack(){
+        WaitDriver(4000);
+        _webDriver.navigate().back();
+    }
 }

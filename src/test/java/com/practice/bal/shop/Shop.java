@@ -11,11 +11,9 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Shop {
     private WebDriver _webDriver;
-    private JavascriptExecutor _jsExecuter;
 
     public Shop(WebDriver webDriver) {
         _webDriver = webDriver;
-        _jsExecuter = (JavascriptExecutor) webDriver;
     }
 
     @FindBy(xpath = "//a[@href='http://practice.automationtesting.in/product/learning-javascript-data-structures-and-algorithm/']")
@@ -66,5 +64,13 @@ public class Shop {
         Select products = new Select(_webDriver.findElement(By.name("orderby")));
 
         products.selectByValue("popularity");
+    }
+
+    public void ReadMore() {
+        _webDriver.findElement(By.linkText("READ MORE")).click();
+    }
+
+    public void SelectOnSale() {
+        _webDriver.findElement(By.className("onsale")).click();
     }
 }
