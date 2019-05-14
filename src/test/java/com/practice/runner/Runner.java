@@ -1,6 +1,7 @@
 package com.practice.runner;
 
 import com.practice.tests.HomePageWithThreeSlidersTest;
+import com.practice.tests.HomepageWithThreeArrivalsTest;
 import org.junit.platform.launcher.Launcher;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
 import org.junit.platform.launcher.TestPlan;
@@ -20,7 +21,7 @@ public class Runner {
 
     public void ExecuteRunner() {
         LauncherDiscoveryRequest request = LauncherDiscoveryRequestBuilder.request()
-                .selectors(selectClass(HomePageWithThreeSlidersTest.class))
+                .selectors(selectClass(HomepageWithThreeArrivalsTest.class))
                 .build();
         Launcher launcher = LauncherFactory.create();
         TestPlan testPlan = launcher.discover(request);

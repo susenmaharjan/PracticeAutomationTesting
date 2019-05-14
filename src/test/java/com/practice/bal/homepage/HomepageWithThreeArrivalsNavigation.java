@@ -6,8 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -98,5 +102,21 @@ public class HomepageWithThreeArrivalsNavigation {
         WebElement couponCodeText = _webDriver.findElement(By.id("coupon_code"));
         couponCodeText.sendKeys(couponCode);
         _webDriver.findElement(By.name("apply_coupon")).click();
+    }
+
+    public void RemoveProduct() {
+        WebElement removeBtn = _webDriver.findElement(By.xpath("//td[@class='product-remove']/a"));
+        Actions actions = new Actions(_webDriver);
+        actions.moveToElement(removeBtn).click();
+     }
+
+    public void FailedApplyCoupon() {
+        _webDriver.findElement(By.xpath("//a[@href='http://practice.automationtesting.in/product/html5-forms/']")).click();
+        RunEnvironment.WaitDriver(2000);
+        _webDriver.findElement(By.xpath("//button[@type='submit'] ")).click();
+        RunEnvironment.WaitDriver(2000);
+        _webDriver.findElement(By.className("wc-forward")).click();
+        RunEnvironment.WaitDriver(2000);
+        ApplyCoupon("krishnasakinala");
     }
 }

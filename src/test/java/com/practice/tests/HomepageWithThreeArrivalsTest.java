@@ -4,6 +4,7 @@ import com.practice.bal.homepage.HomepageWithThreeArrivalsNavigation;
 import com.practice.common.CommonHomepage;
 import com.practice.environment.EnvironmentManager;
 import com.practice.environment.RunEnvironment;
+import net.bytebuddy.build.ToStringPlugin;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -77,25 +78,36 @@ public class HomepageWithThreeArrivalsTest {
     @Test
     @Order(7)
     public void AddToBasket() {
-        boolean isSuccessful= _homePage.AddToBasket();
-        assertEquals(true,isSuccessful);
+        boolean isSuccessful = _homePage.AddToBasket();
+        assertEquals(true, isSuccessful);
     }
 
     @Test
     @Order(8)
-    public void AddMoreToBasket(){
+    public void AddMoreToBasket() {
         _homePage.AddMoreToBasket();
     }
 
     @Test
     @Order(9)
-    public void ViewBasket(){
+    public void ViewBasket() {
         _homePage.ViewBasket();
     }
 
     @Test
     @Order(10)
-    public void ApplyCoupon(){
+    public void ApplyCoupon() {
         _homePage.ApplyCoupon("krishnasakinala");
+    }
+
+    //test case 10
+    @Test
+    @Order(11)
+    public void FailedApplyCoupon() {
+        _homePage.RemoveProduct();
+        RunEnvironment.WaitDriver(1000);
+        _common.ClickShopMenu();
+        RunEnvironment.WaitDriver(2000);
+        _homePage.FailedApplyCoupon();
     }
 }
