@@ -35,4 +35,9 @@ public class ShopTests {
         _shop.FilterByPrice();
     }
 
+    @Test
+    @Order(2)
+    public void SelectProduct(){
+        _shop.SelectProduct();
+    }
 }

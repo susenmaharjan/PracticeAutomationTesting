@@ -17,6 +17,8 @@ public class Shop {
         _jsExecuter = (JavascriptExecutor) webDriver;
     }
 
+    @FindBy(xpath = "//a[@href='http://practice.automationtesting.in/product/learning-javascript-data-structures-and-algorithm/']")
+    WebElement DSAProduct;
 
     public void FilterByPrice() {
         int offsetValue = 1;
@@ -53,5 +55,9 @@ public class Shop {
         //filter
         _webDriver.findElement(By.xpath("//div[@class='price_slider_amount']/button")).click();
         RunEnvironment.WaitDriver(5000);
+    }
+
+    public void SelectProduct() {
+        DSAProduct.click();
     }
 }
