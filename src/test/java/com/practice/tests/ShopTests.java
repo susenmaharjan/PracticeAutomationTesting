@@ -39,5 +39,13 @@ public class ShopTests {
     @Order(2)
     public void SelectProduct(){
         _shop.SelectProduct();
+        RunEnvironment.WaitDriver(5000);
+        _webDriver.navigate().back();
+    }
+
+    @Test
+    @Order(3)
+    public void SortingProducts(){
+        _shop.SortProduct();
     }
 }

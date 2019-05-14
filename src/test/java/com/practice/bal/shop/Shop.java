@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class Shop {
     private WebDriver _webDriver;
@@ -59,5 +60,11 @@ public class Shop {
 
     public void SelectProduct() {
         DSAProduct.click();
+    }
+
+    public void SortProduct() {
+        Select products = new Select(_webDriver.findElement(By.name("orderby")));
+
+        products.selectByValue("popularity");
     }
 }
